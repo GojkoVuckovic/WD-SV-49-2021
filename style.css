@@ -1,0 +1,249 @@
+body
+{
+  background-color: 	#E0E0E0 !important;
+  font-family: 'Raleway', sans-serif !important;
+  box-sizing: border-box;
+}
+nav
+{
+  background: linear-gradient(90deg, rgba(217,112,246,1) 0%, rgba(188,81,240,1) 48%, rgba(133,43,157,1) 100%);
+  border-radius: 0.5vh;
+  
+}
+#crtica
+{
+  border: 3px solid #9370DB;
+  opacity: 100%;
+}
+#welcometext
+{
+  margin-top: 3vh;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 3vh;
+  color: black;
+}
+.col-md-6
+{
+  margin-top: 2vh !important;
+}
+#naslovslika
+{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.accordion
+{
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 3%;
+  
+}
+.accordion-button
+{
+  background-color: #9370DB !important;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  color: black !important;
+  height: 20vh !important;
+  font-size: 2rem !important;
+  
+  
+  
+}
+.accordion-button:not(.collapsed) {
+  color: black !important;
+  background-color: #9370DB !important;
+}
+.accordion-button:link, .accordion-button:visited, .accordion-button:hover, .accordion-button:active  {
+  background-color: #9370DB !important;
+    color: black !important;
+    text-decoration: none !important;
+     border: hidden !important;
+       border-color: #E0E0E0 !important;
+    box-shadow: 0px !important;    
+}
+.accordion-button:focus {
+  z-index: 3;
+  border-color: #E0E0E0 !important;
+  outline: 0;
+  box-shadow: 0 0 0 .25rem #E0E0E0 !important;
+}
+.accordion-body
+{
+  font-size: 2rem;
+  text-align: center !important;
+}
+#accordion-content
+{
+  margin-top: 5vh;
+  
+}
+#accordion-container
+{
+  text-align: center;
+}
+#link-button
+{
+  padding: 30px 30px;
+  font-size: 2rem;
+  text-align: center !important;
+  margin: auto 0 !important;
+  padding: auto 0 !important;
+  display: block;
+}
+.flexcontainer
+{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.card
+{
+  width: 30% !important;
+  margin-top: 5vh !important;
+  margin: auto;
+}
+.card-img-top
+{
+  height: auto;
+}
+.card-body
+{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+#predstavaprikaz
+{
+  height: 30vh !important;
+  color: black;
+  font-size: 3rem;
+  height: 90vh !important;
+  margin-top: 5vh;
+}
+#predstavaslika
+{
+  background-image: url("https://i.imgur.com/eZ061X7.jpeg");
+  background-size: 100% 100%;
+  height: auto ;
+}
+#predstavatekst
+{
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+}
+#kod
+{
+  font-size: 1.2rem !important;
+}
+#exampleModal
+{
+  font-family: 'Raleway', sans-serif;
+}
+.modal-body
+{
+  font-size: 1.5rem !important;
+}
+#modalbutton
+{
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+}
+#rezervacija
+{
+  margin-bottom: 2vh;
+}
+#formdiv
+{
+  margin-top: 5vh;
+}
+#modaldivlogin
+{
+  border: 5px solid transparent !important;
+  border-image: linear-gradient(90deg, rgba(217,112,246,1) 0%, rgba(188,81,240,1) 48%, rgba(133,43,157,1) 100%) !important;
+  border-image-slice: 1 !important;
+}
+#modaldivregister
+{
+  border: 5px solid transparent !important;
+  border-image: linear-gradient(90deg, rgba(217,112,246,1) 0%, rgba(188,81,240,1) 48%, rgba(133,43,157,1) 100%) !important;
+  border-image-slice: 1 !important;
+}
+#potvrdi
+{
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+#loginquestion
+{
+  text-align: center;
+  margin-top: 2vh;
+}
+#registerquestion
+{
+  text-align: center;
+  margin-top: 2vh;
+}
+.progress
+{
+  margin-bottom: 3vh;
+}
+table
+{
+  font-size: 1rem !important;
+}
+.dugmetabela
+{
+  font-size: 1rem !important;
+  word-wrap:"break-word" !important;
+}
+.korisnikprikaz
+{
+  margin-top: 5vh !important;
+}
+@media only screen and (max-width: 992px) {
+  body {
+    box-sizing: border-box;
+  }
+  .flexcontainer
+  {
+    flex-direction: column;
+  }
+  .card
+  {
+    width: 70% !important;
+    margin-top: 10vh !important;
+  }
+  .card-img-top
+  {
+  height: auto;
+  }
+  #predstavaslika
+  {
+    height: 80vh;
+    margin-bottom: 10vh;
+  }
+  #link-button
+  {
+    font-size: 1rem !important;
+  }
+  .accordion-body
+  {
+  font-size: 1rem !important;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  #link-button
+  {
+    font-size: 1.5rem;
+  }
+  .accordion-body
+{
+  font-size: 1.5rem;
+}
+}

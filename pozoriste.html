@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="style.css" type="text/css">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="index.html">Pozoriste "Divlja"</a>
+			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				  <li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="index.html">Pocetna strana</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="login()">Register</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="register()">Login</a>
+					<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+						  <div class="modal-content">
+							<div class="modal-header">
+							  <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+							  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<div class="row justify-content-around" id="modaldivlogin">
+									<div class="col-12" id="formcontent" >
+										<form>
+											<div class="mb-3">
+												<label for="exampleFormControlInput1" class="form-label">Korisnicko ime</label>
+												<input type="text" class="form-control" id="exampleFormControlInput1">
+											</div>
+											<label for="exampleInputPassword1" class="form-label">Lozinka</label>
+											<div class="input-group mb-3">
+												<input type="password" class="form-control" id="lozinka">
+												<span class="input-group-text" id="basic-addon2" onclick="prikazi()" onselectstart="return false;" style="cursor: pointer;">Prikazi lozinku</span>
+											</div>
+											<button class="btn btn-outline-dark" id="potvrdi">Login</button>
+										</form>
+									</div>
+								</div>
+								<div class="row justify-content-around" id="modaldivregister">
+									<div class="col-12" id="formcontent">
+										<form>
+											<div class="mb-3">
+												<label for="exampleFormControlInput1" class="form-label">Ime</label>
+												<input type="text" class="form-control" id="exampleFormControlInput1">
+											</div>
+											<div class="mb-3">
+												<label for="exampleFormControlInput1" class="form-label">Prezime</label>
+												<input type="text" class="form-control" id="exampleFormControlInput1">
+											</div>
+											<div class="mb-3">
+												<label for="exampleFormControlInput1" class="form-label">Korisnicko ime</label>
+												<input type="text" class="form-control" id="exampleFormControlInput1">
+											</div>
+											<label for="exampleInputPassword1" class="form-label">Lozinka</label>
+											<div class="input-group mb-3">
+												<input type="password" class="form-control" id="lozinka">
+												<span class="input-group-text" id="basic-addon2" onclick="prikazi()" onselectstart="return false;" style="cursor: pointer;">Prikazi lozinku</span>
+											</div>
+											<div class="mb-3">
+												<label for="exampleFormControlInput1" class="form-label">Broj</label>
+												<input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" class="form-control" id="exampleFormControlInput1">
+											</div>
+											<div class="mb-3">
+												<label for="exampleFormControlInput1" class="form-label">Email adresa</label>
+												<input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+											</div>
+											<div class="mb-3">
+												<label for="exampleFormControlInput1" class="form-label">Datum rodjenja</label>
+												<input type="date" class="form-control" id="exampleFormControlInput1">
+											</div>
+											<div class="mb-3">
+												<label for="exampleFormControlInput1" class="form-label">Adresa stanovanja</label>
+												<input type="text" class="form-control" id="exampleFormControlInput1">
+											</div>
+											<button class="btn btn-outline-dark" id="potvrdi">Registruj se</button>
+										</form>
+									</div>
+								</div>
+								<p id="loginquestion">Nemate nalog? <a class="btn btn-outline-dark" onclick="login()">Registrujte se!</a></p>
+								<p id="registerquestion">Vec imate nalog? <a class="btn btn-outline-dark" onclick="register()">Ulogujte se!</a></p>
+								
+							</div>
+							<div class="modal-footer">
+							  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zatvori</button>
+							</div>
+						  </div>
+						</div>
+					  </div>
+				  </li>
+				  <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					  Lista pozorista
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+					  <li><a class="dropdown-item" href="pozoriste.html">Srpsko narodno pozoriste</a></li>
+					  <li><a class="dropdown-item" href="#">Narodno pozoriste Beograd</a></li>
+					  <li><a class="dropdown-item" href="#">Jugoslovensko dramsko pozoriste</a></li>
+					  <li><a class="dropdown-item" href="#">Pozoriste na Terazijama</a></li>
+					  <li><a class="dropdown-item" href="#">Narodno pozoriste Sombor</a></li>
+					</ul>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="admin.html">Administracija</a>
+				  </li>
+				</ul>
+				<form class="d-flex">
+				  <input class="form-control me-2" type="search" placeholder="Pretraga" aria-label="Search">
+				  <button class="btn btn-outline-dark" type="submit">Pretraga</button>
+				</form>
+			  </div> 
+			</div>
+		  </nav>
+		  <div class="row" id="welcometext">
+			<div class="col">
+				Srpsko narodno pozorište
+			</div>
+		  </div>
+		  <div class="flexcontainer">
+		  <div class="card">
+			<img src="https://i.imgur.com/eZ061X7.jpeg" class="card-img-top" alt="...">
+			<div class="card-body">
+			  <h5 class="card-title">Antigona</h5>
+			  <p>Antigona je Sofoklova tragedija iz 5. veka p. n. e.. To je klasična tragedija starogrčke dramske umetnosti. Drama je podeljena u sedam činova.</p>
+			  <p>Trajanje: 190 min</p>
+			  <a href="predstava.html" class="btn btn-outline-dark">Vise detalja</a>
+			</div>
+		  </div>
+		  <div class="card">
+			<img src="https://i.imgur.com/d7Ptfcf.png" class="card-img-top" alt="...">
+			<div class="card-body">
+			  <h5 class="card-title">BALKANSKI ŠPIJUN</h5>
+			  <p>Tragikomedija koja na odličan način opisuje period (post) komunističkog režima u bivšoj SFRJ.</p>
+			  <p>Trajanje: 140 min</p>
+			  <a href="predstava.html" class="btn btn-outline-dark">Vise detalja</a>
+			</div>
+		  </div>
+		  <div class="card">
+			<img src="https://i.imgur.com/ddGKPTl.jpg" class="card-img-top" alt="...">
+			<div class="card-body">
+			  <h5 class="card-title">Iranska konferencija</h5>
+			  <p>Fenomenalna farsa reditelja Ivana Virpajeva. Uvlačenje publike u direktan čin donošenja odluke u okvire same konferencije.</p>
+			  <p>Trajanje: 120 min</p>
+			  <a href="#" class="btn btn-outline-dark">Vise detalja</a>
+			</div>
+		  </div>
+		  <div class="card">
+			<img src="https://i.imgur.com/CAnEAWk.png" class="card-img-top" alt="...">
+			<div class="card-body">
+			  <h5 class="card-title">Karmen</h5>
+			  <p>Uživajte u čuvenom delu Žorža Bizea u našem pozorištu! Budite svedoci vatrene pobede emocija nad raciom.</p>
+			  <p>Trajanje: 110 min</p>
+			  <a href="#" class="btn btn-outline-dark">Vise detalja</a>
+			</div>
+		  </div>
+		  <div class="card">
+			<img src="https://i.imgur.com/BOnaM5Z.png" class="card-img-top" alt="...">
+			<div class="card-body">
+			  <h5 class="card-title">Manon Lesko</h5>
+			  <p>Pre­vo kom­bi­nu­je rea­li­zam (kori­sti dru­štve­ne tipo­ve, nazi­ve stvar­nih mesta i pri­hva­ta važnost nov­ca) sa pred­ro­man­ti­čar­skom sen­ti­men­tal­no­šću.</p>
+			  <p>Trajanje: 145 min</p>
+			  <a href="#" class="btn btn-outline-dark">Vise detalja</a>
+			</div>
+		  </div>				  
+		  </div>	
+		<script src="script.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	</body>
+</html>
