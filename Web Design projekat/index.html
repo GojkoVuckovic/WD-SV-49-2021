@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style.css" type="text/css">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+		
+	</head>
+	<body onload="ucitajpozorista()">
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">Pozoriste "Divlja"</a>
+			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				  <li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="index.html">Pocetna strana</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="login()">Register</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="register()">Login</a>
+					<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+						  <div class="modal-content">
+							<div class="modal-header">
+							  <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+							  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<div class="row justify-content-around" id="modaldivlogin">
+									<div class="col-12" id="formcontent" >
+										<form id="loginform">
+											<div class="mb-3">
+												<label for="exampleFormControlInput1" class="form-label">Korisnicko ime</label>
+												<input type="text" class="form-control" id="loginime">
+											</div>
+											<label for="exampleInputPassword1" class="form-label">Lozinka</label>
+											<div class="input-group mb-3">
+												<input type="password" class="form-control" id="loginprezime">
+												<span class="input-group-text" id="basic-addon2" onclick="prikazi('loginprezime')" onselectstart="return false;" style="cursor: pointer;">Prikazi lozinku</span>
+											</div>
+											<button class="btn btn-outline-dark" id="potvrdi">Login</button>
+										</form>
+									</div>
+								</div>
+								<div class="row justify-content-around" id="modaldivregister">
+									<div class="col-12" id="formcontent">
+										<form id="registerform">
+											<div class="mb-3">
+												<label for="exampleFormControlInput1" class="form-label" >Ime</label>
+												<input type="text" class="form-control" id="registerime">
+											</div>
+											<div class="mb-3">
+												<label for="exampleFormControlInput1" class="form-label" >Prezime</label>
+												<input type="text" class="form-control" id="registerprezime">
+											</div>
+											<div class="mb-3">
+												<label for="exampleFormControlInput1" class="form-label">Korisnicko ime</label>
+												<input type="text" class="form-control" id="registerkoris">
+											</div>
+											<label for="exampleInputPassword1" class="form-label">Lozinka</label>
+											<div class="input-group mb-3">
+												<input type="password" class="form-control" id="registerlozinka">
+												<span class="input-group-text" id="basic-addon2" onclick="prikazi('registerprezime')" onselectstart="return false;" style="cursor: pointer;">Prikazi lozinku</span>
+											</div>
+											<div class="mb-3">
+												<label for="exampleFormControlInput1" class="form-label">Broj</label>
+												<input type="tel" id="registerbroj" name="phone"  class="form-control" >
+											</div>
+											<div class="mb-3">
+												<label for="exampleFormControlInput1" class="form-label">Email adresa</label>
+												<input type="email" class="form-control" id="registeremail" placeholder="name@example.com">
+											</div>
+											<div class="mb-3">
+												<label for="exampleFormControlInput1" class="form-label">Datum rodjenja</label>
+												<input type="date" class="form-control" id="registerdatum">
+											</div>
+											<div class="mb-3">
+												<label for="exampleFormControlInput1" class="form-label">Adresa stanovanja</label>
+												<input type="text" class="form-control" id="registeradresa">
+											</div>
+											<button class="btn btn-outline-dark" id="potvrdi">Registruj se</button>
+										</form>
+									</div>
+								</div>
+								<p id="loginquestion">Nemate nalog? <a class="btn btn-outline-dark" onclick="login()">Registrujte se!</a></p>
+								<p id="registerquestion">Vec imate nalog? <a class="btn btn-outline-dark" onclick="register()">Ulogujte se!</a></p>
+								
+							</div>
+							<div class="modal-footer">
+							  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zatvori</button>
+							</div>
+						  </div>
+						</div>
+					  </div>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="admin.html">Administracija</a>
+				  </li>
+				</ul>
+				<form class="d-flex">
+				  <input class="form-control me-2" type="search" placeholder="Pretraga" aria-label="Search">
+				  <button class="btn btn-outline-dark" type="submit">Pretraga</button>
+				</form>
+			  </div> 
+			</div>
+		  </nav>
+		  <div class="row justify-content-around" id="welcometext">
+			<div class="col-9" id="naslovslika">
+				Dobrodosli na web stranicu pozorista "Divlja"! Ovde mozete pronaci spisak svih pozorista kao i njihove predstave.
+			</div>
+			<div class="col-9" >
+				<hr id="crtica">
+			</div>
+		  </div>
+		  
+		 
+		  
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
